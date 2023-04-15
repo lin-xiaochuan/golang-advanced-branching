@@ -84,6 +84,7 @@ func main() {
 
 	// Generate ratings for the different vehicles
 	generateRating()
+
 	// Print ratings for the different vehicles
 
 	for _, veh := range inventory {
@@ -132,6 +133,7 @@ func generateRating() {
 				vehResult.feedbackTotal++
 				for _, word := range text {
 					switch s := strings.Trim(strings.ToLower(word), " ,.,!,?,\t,\n,\r"); s {
+
 					case "pleasure", "impressed", "wonderful", "fantastic", "splendid":
 						vehRating += extraPositive
 					case "help", "helpful", "thanks", "thank you", "happy":
@@ -186,3 +188,4 @@ func (t *truck) truckDetails() {
 	fmt.Printf("\n%-5v: %-8v: %-12v ", "Truck", t.make, t.model)
 	showRating(t.model)
 }
+
